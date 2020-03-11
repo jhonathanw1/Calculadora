@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html >
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		
+		<?php
+			if(isset($_GET["calculadora"])){
+				if($_POST["ope"] == "+"){
+					$valor = $_POST[“camp1”] + $_POST["camp2"];
+				}
+				elseif($_POST["ope"] == "-"){
+					$valor = $_POST["camp1"] – $_POST["camp2"];
+				}
+				elseif($_POST["ope"] == "*"){
+					$valor = $_POST["camp1"] * $_POST["camp2"];
+				}
+				elseif($_POST["ope"] == "/"){
+					$valor = $_POST["camp1"] / $_POST["camp2"];
+				}
+			}
+		?>
+		
+		<h1>Calculadora</h1>
+		<form id="f1" name="f1" method="post">
+			
+				
+					<input type="text" name="camp1" id="camp1"/>
+				
+					<select name="ope" id="ope">
+						<option value="+" selected>+</option>
+						<option value="-">-</option>
+						<option value="*">*</option>
+						<option value="/">/</option>
+					</select>
+			
+					<input type="text" name="camp2" id="camp2" />
+
+				<input type="submit" name="button" value="Calcular" />
+				
+		</form>
+		<p>
+			Resultado: <?php echo "$valor" ?>
+		</p>
+	</body>
+</html>
